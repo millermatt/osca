@@ -54,7 +54,3 @@ for IMAGE in "${DOCKER_IMAGES[@]}"; do
         echo ❌ Failed
     fi
 done
-
-# Print a summary table of success and failures
-# echo "Summary:"
-# printf '%s\n' "${RESULTS[@]}"
