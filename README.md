@@ -29,7 +29,7 @@ Remember to run commands with the necessary permissions (usually as root). Be aw
 | Ubuntu | `/usr/local/share/ca-certificates/` | `update-ca-certificates` | `apt-get install -y ca-certificates` |
 | Windows | `C:\Windows\System32\certsrv\CertEnroll\` | `certutil -addstore -f "Root" <path_to_cert>` | Built into the system |
 
-## Guidelines for New Certificate Files
+## Guidelines for new certificate files
 
 - Each certificate file should contain only one certificate.
 - Certificates must be in the PEM format.
