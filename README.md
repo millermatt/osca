@@ -6,7 +6,7 @@ This document provides a guide on managing Certificate Authority (CA) certificat
 Certificate Authorities (CAs) are entities that issue digital certificates. These digital certificates are used to create secure connections via TLS/SSL (Transport Layer Security/Secure Sockets Layer). Managing these certificates involves adding new ones to your system and updating the ones that are already installed.
 ​
 
-The table provided in this document serves as a guide for managing CA certificates on different operating systems. It includes information about identifying the operating system, installing the certificate management applications, adding new CA certificates, and more.
+The table provided in this document serves as a guide for managing CA certificates on different operating systems. It includes information about installing the certificate management applications and adding new CA certificates.
 
 ​
 Remember to run commands with the necessary permissions (usually as root). Be aware that making changes to your system's certificates can have significant effects and should only be done if you understand the implications. Always back up your system before making changes. If you're unsure, consult with a system administrator or a trusted expert.
