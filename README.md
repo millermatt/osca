@@ -28,3 +28,13 @@ Remember to run commands with the necessary permissions (usually as root). Be aw
 | SUSE | `/etc/pki/trust/anchors/` | `update-ca-certificates` | `zypper install ca-certificates` |
 | Ubuntu | `/usr/local/share/ca-certificates/` | `update-ca-certificates` | `apt-get install -y ca-certificates` |
 | Windows | `C:\Windows\System32\certsrv\CertEnroll\` | `certutil -addstore -f "Root" <path_to_cert>` | Built into the system |
+
+## Using update-certs.sh
+
+This repository includes a script, `update-certs.sh`, designed to simplify the process of adding new certificates on various Linux distributions (refer to the table above for supported distributions).
+
+Follow these steps to use the script:
+
+1. Transfer the `update-certs.sh` script to your Linux system.
+2. Place the new certificate(s) in a known location on your system. The script will handle moving these certificate(s) to the appropriate system-specific directory (as listed in the table above).
+3. Execute the script, providing the path to the certificate(s) as an argument. For example: `sh update-certs.sh /path/to/your/certificate-or-directory`

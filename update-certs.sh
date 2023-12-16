@@ -58,8 +58,12 @@ update_ca_certs() {
     mkdir -p ${CERT_FOLDER}
 
     # Copy the CA certificate file or folder to the appropriate location
-    if [ "$(ls -A ${CACERT_PATH})" ]; then
-        cp -r ${CACERT_PATH}/* ${CERT_FOLDER}
+    if [ -d "${CACERT_PATH}" ]; then
+        if [ "$(ls -A ${CACERT_PATH})" ]; then
+            cp -r ${CACERT_PATH}/* ${CERT_FOLDER}
+        fi
+    else
+        cp ${CACERT_PATH} ${CERT_FOLDER}
     fi
 
     # Update the CA certificates
