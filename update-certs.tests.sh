@@ -28,9 +28,6 @@ echo "Container mitmproxy is ready."
 mkdir -p test-certs
 docker cp mitmproxy:/home/mitmproxy/.mitmproxy/mitmproxy-ca-cert.pem ./test-certs/mitmproxy-ca-cert.crt
 
-# Initialize an empty array to store the results
-RESULTS=()
-
 # Loop through the Docker images
 for IMAGE in "${DOCKER_IMAGES[@]}"; do
     echo -n "Running test for $IMAGE ... "
@@ -49,8 +46,8 @@ for IMAGE in "${DOCKER_IMAGES[@]}"; do
 
     # Add the result to the array
     if [ $EXIT_CODE -eq 0 ]; then
-        echo ✅ Passed
+        echo "✅ Passed"
     else
-        echo ❌ Failed
+        echo "❌ Failed - run './update-certs.tests.sh $IMAGE' to debug"
     fi
 done
