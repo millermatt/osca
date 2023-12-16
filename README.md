@@ -37,7 +37,7 @@ Remember to run commands with the necessary permissions (usually as root). Be aw
 
 ## PEM format
 
-PEM (Privacy Enhanced Mail) is a widely used encoding format for SSL certificates. PEM formatted certificates are ASCII (Base64) encoded and include "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----" lines. They can contain certificates, certificate chains, and even private keys.
+PEM is a widely used encoding format for SSL certificates. PEM formatted certificates are ASCII (Base64) encoded and include "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----" lines.
 
 To convert certificates in other formats to PEM, you can use [OpenSSL](https://www.openssl.org/), a robust toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. Here are some commands for converting from popular formats to PEM:
 
