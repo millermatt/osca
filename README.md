@@ -14,21 +14,90 @@ Remember to run commands with the necessary permissions (usually as root). Be aw
 ​
 ## Operating System Cert Management
 ​
-| System | Copy new certs here | Command to trust new certs | Install cert management tool |
-|--------|---------------------|----------------------------|------------------------------|
-| Alpine | `/usr/local/share/ca-certificates/` | `update-ca-certificates` | `apk add ca-certificates` |
-| Amazon Linux | `/etc/pki/ca-trust/source/anchors/` | `update-ca-trust extract` | `yum install ca-certificates` |
-| Arch | `/etc/ca-certificates/trust-source/anchors/` | `trust extract-compat` | `pacman -Sy ca-certificates-utils` |
-| CentOS | `/etc/pki/ca-trust/source/anchors/` | `update-ca-trust extract` | `yum install ca-certificates` |
-| CoreOS | `/etc/pki/ca-trust/source/anchors/` | `update-ca-certificates` | Built into the system |
-| Debian | `/usr/local/share/ca-certificates/` | `update-ca-certificates` | `apt-get install -y ca-certificates` |
-| Fedora | `/etc/pki/ca-trust/source/anchors/` | `update-ca-trust extract` | `dnf install ca-certificates` |
-| MacOS | `/Library/Keychains/System.keychain` | `security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <path_to_cert>` | Built into the system |
-| RedHat | `/etc/pki/ca-trust/source/anchors/` | `update-ca-trust extract` | `yum install ca-certificates` |
-| SUSE | `/etc/pki/trust/anchors/` | `update-ca-certificates` | `zypper install ca-certificates` |
-| Ubuntu | `/usr/local/share/ca-certificates/` | `update-ca-certificates` | `apt-get install -y ca-certificates` |
-| Windows | `C:\Windows\System32\certsrv\CertEnroll\` | `certutil -addstore -f "Root" <path_to_cert>` | Built into the system |
-
+<table>
+    <thead>
+        <tr>
+            <th>System</th>
+            <th>Copy new certs here</th>
+            <th>Command to trust new certs</th>
+            <th>Install cert management tool</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Alpine</td>
+            <td>/usr/local/share/ca-certificates/</td>
+            <td>update-ca-certificates</td>
+            <td>apk add ca-certificates</td>
+        </tr>
+        <tr>
+            <td>Amazon Linux</td>
+            <td>/etc/pki/ca-trust/source/anchors/</td>
+            <td>update-ca-trust extract</td>
+            <td>yum install ca-certificates</td>
+        </tr>
+        <tr>
+            <td>Arch</td>
+            <td>/etc/ca-certificates/trust-source/anchors/</td>
+            <td>trust extract-compat</td>
+            <td>pacman -Sy ca-certificates-utils</td>
+        </tr>
+        <tr>
+            <td>CentOS</td>
+            <td>/etc/pki/ca-trust/source/anchors/</td>
+            <td>update-ca-trust extract</td>
+            <td>yum install ca-certificates</td>
+        </tr>
+        <tr>
+            <td>CoreOS</td>
+            <td>/etc/pki/ca-trust/source/anchors/</td>
+            <td>update-ca-certificates</td>
+            <td>Built into the system</td>
+        </tr>
+        <tr>
+            <td>Debian</td>
+            <td>/usr/local/share/ca-certificates/</td>
+            <td>update-ca-certificates</td>
+            <td>apt-get install -y ca-certificates</td>
+        </tr>
+        <tr>
+            <td>Fedora</td>
+            <td>/etc/pki/ca-trust/source/anchors/</td>
+            <td>update-ca-trust extract</td>
+            <td>dnf install ca-certificates</td>
+        </tr>
+        <tr>
+            <td>MacOS</td>
+            <td>/Library/Keychains/System.keychain</td>
+            <td>security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain &lt;path_to_cert&gt;</td>
+            <td>Built into the system</td>
+        </tr>
+        <tr>
+            <td>RedHat</td>
+            <td>/etc/pki/ca-trust/source/anchors/</td>
+            <td>update-ca-trust extract</td>
+            <td>yum install ca-certificates</td>
+        </tr>
+        <tr>
+            <td>SUSE</td>
+            <td>/etc/pki/trust/anchors/</td>
+            <td>update-ca-certificates</td>
+            <td>zypper install ca-certificates</td>
+        </tr>
+        <tr>
+            <td>Ubuntu</td>
+            <td>/usr/local/share/ca-certificates/</td>
+            <td>update-ca-certificates</td>
+            <td>apt-get install -y ca-certificates</td>
+        </tr>
+        <tr>
+            <td>Windows</td>
+            <td>C:\Windows\System32\certsrv\CertEnroll\</td>
+            <td>certutil -addstore -f "Root" &lt;path_to_cert&gt;</td>
+            <td>Built into the system</td>
+        </tr>
+    </tbody>
+</table>
 ## Guidelines for new certificate files
 
 - Each certificate file should contain only one certificate.
