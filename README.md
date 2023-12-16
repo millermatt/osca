@@ -129,17 +129,17 @@ Remember to replace certificate.der, certificate.pfx, and certificate.p7b with t
 
 ## Using update-certs.sh
 
-This repository includes a script, `update-certs.sh`, designed to simplify the process of adding new certificates on various Linux distributions (refer to the table above for supported distributions).
+This repository includes a script, [`update-certs.sh`](./update-certs.sh), designed to simplify the process of adding new certificates on various Linux distributions (refer to the table above for supported distributions).
 
 Follow these steps to use the script:
 
-1. Transfer the `update-certs.sh` script to your Linux system.
+1. Transfer the [`update-certs.sh`](./update-certs.sh) script to your Linux system.
 2. Place the new certificate(s) in a known location on your system. The script will handle moving these certificate(s) to the appropriate system-specific directory (as listed in the table above).
 3. Execute the script, providing the path to the certificate(s) as an argument. For example: `sh update-certs.sh /path/to/your/certificate-or-directory`
 
 ## Using update-certs.sh with Docker
 
-The `update-certs.sh` script can also be used within a Docker container. This is particularly useful when you are running Docker behind a corporate proxy that injects man in the middle certs.
+The [`update-certs.sh`](./update-certs.sh) script can also be used within a Docker container. This is particularly useful when you are running Docker behind a corporate proxy that injects man in the middle certs.
 
 1. Obtain a copy of the proxy certs and copy the file[s] to your Docker host
 1. Run the Docker container, and mount the `update-certs.sh` script and the file or directory containing your new certificates into the container. For example:
