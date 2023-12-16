@@ -14,18 +14,18 @@ Remember to run commands with the necessary permissions (usually as root). Be aw
 ​
 ## CA Certificates Management Table
 ​
-| System | Command to identify system | Command to add new CA certs | Command to install cert management tool | Folder in which to put new CA certs before calling the cert management tool | Docker Tag |
-|--------|----------------------------|-----------------------------|-----------------------------------------|----------------------------|------------|
-| Alpine | `cat /etc/*-release \| grep "Alpine Linux"` | `update-ca-certificates` | `apk add ca-certificates` | `/usr/local/share/ca-certificates/` | alpine:latest |
-| Amazon Linux | `cat /etc/*-release \| grep "Amazon Linux"` | `update-ca-trust extract` | `yum install ca-certificates` | `/etc/pki/ca-trust/source/anchors/` | amazonlinux:latest |
-| Arch | `cat /etc/*-release \| grep "Arch Linux"` | `trust extract-compat` | `pacman -Sy ca-certificates-utils` | `/etc/ca-certificates/trust-source/anchors/` | archlinux:latest |
-| CentOS | `cat /etc/*-release \| grep CentOS` | `update-ca-trust extract` | `yum install ca-certificates` | `/etc/pki/ca-trust/source/anchors/` | centos:latest |
-| CoreOS | `cat /etc/*-release \| grep CoreOS` | `update-ca-certificates` | Built into the system | `/etc/pki/ca-trust/source/anchors/` | Not available |
-| Debian | `cat /etc/*-release \| grep Debian` | `update-ca-certificates` | `apt-get update && apt-get install -y ca-certificates` | `/usr/local/share/ca-certificates/` | debian:latest |
-| Fedora | `cat /etc/*-release \| grep Fedora` | `update-ca-trust extract` | `dnf install ca-certificates` | `/etc/pki/ca-trust/source/anchors/` | fedora:latest |
-| MacOS | `uname -a \| grep Darwin` | `security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <path_to_cert>` | Built into the system | `/Library/Keychains/System.keychain` | Not available |
-| RedHat | `cat /etc/*-release \| grep "Red Hat"` | `update-ca-trust extract` | `yum install ca-certificates` | `/etc/pki/ca-trust/source/anchors/` | registry.access.redhat.com/ubi8/ubi:latest |
-| SUSE | `cat /etc/*-release \| grep SUSE` | `update-ca-certificates` | `zypper install ca-certificates` | `/etc/pki/trust/anchors/` | opensuse/leap:latest |
-| Ubuntu | `cat /etc/*-release \| grep Ubuntu` | `update-ca-certificates` | `apt-get update && apt-get install -y ca-certificates` | `/usr/local/share/ca-certificates/` | ubuntu:latest |
-| Windows | - | `certutil -addstore -f "Root" <path_to_cert>` | Built into the system | `C:\Windows\System32\certsrv\CertEnroll\` | mcr.microsoft.com/windows/servercore:ltsc2019 |
+| System | Command to add new CA certs | Command to install cert management tool | Folder in which to put new CA certs before calling the cert management tool | Docker Tag |
+|--------|-----------------------------|-----------------------------------------|----------------------------|------------|
+| Alpine | `update-ca-certificates` | `apk add ca-certificates` | `/usr/local/share/ca-certificates/` | alpine:latest |
+| Amazon Linux | `update-ca-trust extract` | `yum install ca-certificates` | `/etc/pki/ca-trust/source/anchors/` | amazonlinux:latest |
+| Arch | `trust extract-compat` | `pacman -Sy ca-certificates-utils` | `/etc/ca-certificates/trust-source/anchors/` | archlinux:latest |
+| CentOS | `update-ca-trust extract` | `yum install ca-certificates` | `/etc/pki/ca-trust/source/anchors/` | centos:latest |
+| CoreOS | `update-ca-certificates` | Built into the system | `/etc/pki/ca-trust/source/anchors/` | Not available |
+| Debian | `update-ca-certificates` | `apt-get update && apt-get install -y ca-certificates` | `/usr/local/share/ca-certificates/` | debian:latest |
+| Fedora | `update-ca-trust extract` | `dnf install ca-certificates` | `/etc/pki/ca-trust/source/anchors/` | fedora:latest |
+| MacOS | `security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <path_to_cert>` | Built into the system | `/Library/Keychains/System.keychain` | Not available |
+| RedHat | `update-ca-trust extract` | `yum install ca-certificates` | `/etc/pki/ca-trust/source/anchors/` | registry.access.redhat.com/ubi8/ubi:latest |
+| SUSE | `update-ca-certificates` | `zypper install ca-certificates` | `/etc/pki/trust/anchors/` | opensuse/leap:latest |
+| Ubuntu | `update-ca-certificates` | `apt-get update && apt-get install -y ca-certificates` | `/usr/local/share/ca-certificates/` | ubuntu:latest |
+| Windows | `certutil -addstore -f "Root" <path_to_cert>` | Built into the system | `C:\Windows\System32\certsrv\CertEnroll\` | mcr.microsoft.com/windows/servercore:ltsc2019 |
 ​
