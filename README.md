@@ -98,6 +98,7 @@ Remember to run commands with the necessary permissions (usually as root). Be aw
         </tr>
     </tbody>
 </table>
+
 ## Guidelines for new certificate files
 
 - Each certificate file should contain only one certificate.
