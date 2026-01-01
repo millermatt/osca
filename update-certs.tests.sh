@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Array of Docker images for different systems
-DOCKER_IMAGES=("alpine:latest" "amazonlinux:latest" "archlinux:latest" "centos:latest" "debian:latest" "fedora:latest" "opensuse/leap:latest" "ubuntu:latest" "registry.access.redhat.com/ubi8/ubi:latest")
+DOCKER_IMAGES=("alpine:latest" "amazonlinux:latest" "archlinux:latest" "quay.io/centos/centos:stream9" "debian:latest" "fedora:latest" "opensuse/leap:latest" "ubuntu:latest" "registry.access.redhat.com/ubi8/ubi:latest")
 DOCKER_IMAGES_OVERRIDE="${1}"
 if [ -n "${DOCKER_IMAGES_OVERRIDE}" ]; then
     DOCKER_IMAGES=("${DOCKER_IMAGES_OVERRIDE}")
