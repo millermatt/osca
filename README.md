@@ -150,3 +150,9 @@ The [`update-certs.sh`](./update-certs.sh) script can also be used within a Dock
     ```
 
     This command runs the `update-certs.sh` script inside the Docker container, with `/proxy-certs` as the argument. The script will copy the certificates from `/proxy-certs` to the appropriate directory in the container and update the system's trust store.
+
+## Why the script temporarily switches package repos to HTTP
+
+When you run `update-certs.sh` inside a container behind a TLS‑inspecting proxy, the base image does not yet trust the proxy’s MITM certificate. Until the new CA is installed, HTTPS package fetches can fail. The script therefore temporarily disables repo TLS verification or rewrites repo URLs to HTTP so it can install `ca-certificates` and `curl`, copy your provided CA(s), and update the trust store.
+
+This behavior is limited to the package‑manager configuration inside the container you run; it does not affect your host. If you maintain your own images, you can revert repo configs to HTTPS after the trust store is updated.
