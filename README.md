@@ -79,6 +79,12 @@ Remember to run commands with the necessary permissions (usually as root). Be aw
             <td><code>yum install ca-certificates</code></td>
         </tr>
         <tr>
+            <td>SteamOS</td>
+            <td><code>/etc/ca-certificates/trust-source/anchors/</code></td>
+            <td><code>trust extract-compat</code></td>
+            <td><code>pacman -Sy ca-certificates-utils</code></td>
+        </tr>
+        <tr>
             <td>SUSE</td>
             <td><code>/etc/pki/trust/anchors/</code></td>
             <td><code>update-ca-certificates</code></td>
