@@ -70,7 +70,7 @@ update_ca_certs() {
     ${UPDATE_CMD}
 
     # Verify SSL requests can be made
-    if ! curl -s -v https://www.google.com 2>&1 | grep "SSL certificate verify ok"; then
+    if ! curl -s -v https://www.google.com 2>&1 | grep -Ei "SSL certificate (verify ok|verified via OpenSSL)"; then
         echo "SSL verification failed"
         curl -s -v https://www.google.com
         exit 1
