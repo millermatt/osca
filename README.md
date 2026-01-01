@@ -51,7 +51,7 @@ Remember to run commands with the necessary permissions (usually as root). Be aw
         <tr>
             <td>CoreOS</td>
             <td><code>/etc/pki/ca-trust/source/anchors/</code></td>
-            <td><code>update-ca-certificates</code></td>
+            <td><code>update-ca-trust extract</code></td>
             <td>Built into the system</td>
         </tr>
         <tr>
